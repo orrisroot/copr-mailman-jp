@@ -1,0 +1,36 @@
+diff -up mailman-2.1.13/bin/msgfmt.py.env mailman-2.1.9/bin/msgfmt.py
+--- mailman-2.1.13/bin/msgfmt.py.env	2010-04-13 17:01:16.000000000 +0200
++++ mailman-2.1.13/bin/msgfmt.py	2010-04-13 17:01:22.000000000 +0200
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env python
++#! /usr/bin/python
+ # -*- coding: iso-8859-1 -*-
+ # Written by Martin v. Löwis <loewis@informatik.hu-berlin.de>
+ 
+diff -up mailman-2.1.13/Mailman/Archiver/pipermail.py.env mailman-2.1.9/Mailman/Archiver/pipermail.py
+--- mailman-2.1.13/Mailman/Archiver/pipermail.py.env	2010-04-13 17:00:31.000000000 +0200
++++ mailman-2.1.13/Mailman/Archiver/pipermail.py	2010-04-13 17:00:38.000000000 +0200
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env python
++#! /usr/bin/python
+ 
+ from __future__ import nested_scopes
+ 
+diff -up mailman-2.1.13/Mailman/Post.py.env mailman-2.1.9/Mailman/Post.py
+--- mailman-2.1.13/Mailman/Post.py.env	2010-04-13 16:59:59.000000000 +0200
++++ mailman-2.1.13/Mailman/Post.py	2010-04-13 17:00:06.000000000 +0200
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env python
++#! /usr/bin/python
+ #
+ # Copyright (C) 2001-2018 by the Free Software Foundation, Inc.
+ #
+diff -up mailman-2.1.18.1+j2p4/tests/onebounce.py.env mailman-2.1.18.1+j2p4/tests/onebounce.py
+--- mailman-2.1.18.1+j2p4/tests/onebounce.py.env	2014-01-17 15:00:59.000000000 +0900
++++ mailman-2.1.18.1+j2p4/tests/onebounce.py	2014-01-17 15:00:59.000000000 +0900
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env python
++#! /usr/bin/python
+ 
+ # Copyright (C) 2002-2018 by the Free Software Foundation, Inc.
+ #
