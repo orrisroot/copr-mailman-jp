@@ -6,7 +6,8 @@ https://copr.fedorainfracloud.org/coprs/orrisroot/mailman-jp/
 ## Installation Instructions of Fedora Copr build packages
 Currently, Copr repository is provided only CentOS 8 packages.
 ```
-$ sudo curl -sL https://copr.fedorainfracloud.org/coprs/orrisroot/mailman-jp/repo/epel-8/orrisroot-mailman-jp-epel-8.repo -o /etc/yum.repos.d/mailman-jp.repo
+$ sudo dnf install dnf-plugins-core
+$ sudo dnf copr enable orrisroot/mailman-jp
 $ sudo dnf install epel-release
 $ sudo dnf install mailman
 ```
