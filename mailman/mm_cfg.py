@@ -14,7 +14,7 @@
 # 
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software 
-# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 """This module contains your site-specific settings.
 
@@ -32,6 +32,14 @@ line (see below).
 
 Note that these are just default settings; many can be overridden via the
 administrator and user interfaces on a per-list or per-user basis.
+
+Also note that many of these settings will not be effective until Mailman
+is restarted.  Thus, you should always restart Mailman after changing this
+file.
+
+Further, settings which relate to a list's host_name and web_page_url only
+affect lists created after the change.  For existing lists, see the FAQ at
+<http://wiki.list.org/x/mIA9>.
 
 """
 

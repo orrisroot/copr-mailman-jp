@@ -1,10 +1,12 @@
 # Turn off the brp-python-bytecompile script
 %global __os_install_post %(echo '%{__os_install_post}' | sed -e 's!/usr/lib[^[:space:]]*/brp-python-bytecompile[[:space:]].*$!!g')
+
 Summary: Mailing list manager with built in Web access
 Name: mailman
-Version: 2.1.29+j1p1
+Version: 2.1.33+j1p1
 Release: 1%{?dist}.ors
 Epoch: 3
+Group: Applications/Internet
 Source0: https://mm.poem.co.jp/mailman-jp/src/mailman-%{version}.tbz2
 Source1: mm_cfg.py
 Source3: httpd-mailman.conf
@@ -23,11 +25,10 @@ Patch4: mailman-2.1.27+j1-cron.patch
 Patch5: mailman-2.1.24+j1p1-FHS.patch
 Patch6: mailman-2.1.16-python-compile.patch
 Patch7: mailman-2.1.13-archive-reply.patch
-Patch13: mailman-2.1.9-unicode.patch
-Patch21: mailman-2.1.27+j1-env-python.patch
+Patch9: mailman-2.1.9-unicode.patch
+#Patch21: mailman-2.1.27+j1-env-python.patch
 Patch22: mailman-2.1.15-check_perms.patch
-Patch23: mailman-2.1.29+j1-lib64-paths.patch
-Patch24: mailman-specify_python_version.patch
+Patch31: mailman-specify_python_version.patch
 
 License: GPLv2+
 URL: http://www.list.org/
@@ -113,20 +114,16 @@ additional installation steps, these are described in:
 %patch5 -p1 -b .FHS
 %patch6 -p1 -b .python-compile
 %patch7 -p1 -b .archive-in-reply-to
-%patch13 -p1 -b .unicode
-%patch21 -p1
+%patch9 -p1 -b .unicode
+#%patch21 -p1
 %patch22 -p1
-%if %{_lib} == "lib64"
-%patch23 -p1 -b .lib64-paths
-%endif
-%patch24 -p1 -b .python_version
-
+%patch31 -p1
 
 #cp $RPM_SOURCE_DIR/mailman.INSTALL.REDHAT.in INSTALL.REDHAT.in
 cp %{SOURCE5} INSTALL.REDHAT.in
 rm -f contrib/redhat_fhs.patch
 mv contrib/sitemapgen contrib/sitemapgen.in
-    
+
 
 %build
 
@@ -311,7 +308,7 @@ chmod %{buildroot}/%{mmdir} -s -R
 chmod g+s %{buildroot}/%{mmdir}/cgi-bin/*
 chmod g+s %{buildroot}/%{mmdir}/mail/mailman
 # no need for setgid in configdir
-chmod %{buildroot}/%{configdir} -s -R
+chmod %{buildroot}/%{configdir}/* -s -R
 
 %pre
 
@@ -577,7 +574,7 @@ exit 0
 %config(noreplace) %{httpdconfdir}/%{httpdconffile}
 %config(noreplace) /etc/logrotate.d/%{name}
 /etc/smrsh/%{mail_wrapper}
-%dir %attr(2775,root,%{mmgroup}) %{configdir}
+%dir %attr(2755,root,%{mmgroup}) %{configdir}
 %attr(0644, root, %{mmgroup}) %config(noreplace) %verify(not md5 size mtime) %{configdir}/sitelist.cfg
 %attr(775,root,%{mmgroup}) %{logdir}
 %{_tmpfilesdir}/%{name}.conf
@@ -589,8 +586,14 @@ exit 0
 %dir %attr(775,root,%{mmgroup}) %{lockdir}
 
 %changelog
-* Mon Apr 06 2020 Yoshihiro OKUMURA <orrisroot@gmail.com> - 3:2.1.29+j1p1-1
-- Rebuild for CentOS 8
+* Tue Jun 02 2020 Yoshihiro OKUMURA <orrisroot@gmail.com> - 3:2.1.33+j1p1-1
+-- Rebuild for CentOS 8
+
+* Sun May 16 2020 Yasuhito FUTATSUKI <futatuki@poem.co.jp> 3:2.1.33+j1p1
+- upgrade to 2.1.33+j1
+
+* Sat May 09 2020 Yasuhito FUTATSUKI <futatuki@poem.co.jp> 3:2.1.33+j1
+- upgrade to 2.1.33+j1
 
 * Wed Apr 24 2019 Yasuhito FUTATSUKI <futatuki@poem.co.jp> 3:2.1.29+j1p1
 - upgrade to 2.1.29+j1p1
