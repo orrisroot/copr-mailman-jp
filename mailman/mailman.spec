@@ -3,7 +3,7 @@
 
 Summary: Mailing list manager with built in Web access
 Name: mailman
-Version: 2.1.33+j1p1
+Version: 2.1.34+j1
 Release: 1%{?dist}.ors
 Epoch: 3
 Group: Applications/Internet
@@ -26,7 +26,6 @@ Patch5: mailman-2.1.24+j1p1-FHS.patch
 Patch6: mailman-2.1.16-python-compile.patch
 Patch7: mailman-2.1.13-archive-reply.patch
 Patch9: mailman-2.1.9-unicode.patch
-#Patch21: mailman-2.1.27+j1-env-python.patch
 Patch22: mailman-2.1.15-check_perms.patch
 Patch31: mailman-specify_python_version.patch
 
@@ -586,10 +585,13 @@ exit 0
 %dir %attr(775,root,%{mmgroup}) %{lockdir}
 
 %changelog
-* Tue Jun 02 2020 Yoshihiro OKUMURA <orrisroot@gmail.com> - 3:2.1.33+j1p1-1
--- Rebuild for CentOS 8
+* Mon Jul 13 2020 Yoshihiro OKUMURA <orrisroot@gmail.com> - 3:2.1.34+j1-1
+- update to 2.1.34+j1
 
-* Sun May 16 2020 Yasuhito FUTATSUKI <futatuki@poem.co.jp> 3:2.1.33+j1p1
+* Tue Jun 02 2020 Yoshihiro OKUMURA <orrisroot@gmail.com> - 3:2.1.33+j1p1-1
+- Rebuild for CentOS 8
+
+* Sat May 16 2020 Yasuhito FUTATSUKI <futatuki@poem.co.jp> 3:2.1.33+j1p1
 - upgrade to 2.1.33+j1
 
 * Sat May 09 2020 Yasuhito FUTATSUKI <futatuki@poem.co.jp> 3:2.1.33+j1
