@@ -3,7 +3,7 @@
 
 Summary: Mailing list manager with built in Web access
 Name: mailman
-Version: 2.1.35+j1
+Version: 2.1.38+j1
 Release: 1%{?dist}.ors
 Epoch: 3
 Group: Applications/Internet
@@ -586,6 +586,9 @@ exit 0
 %dir %attr(775,root,%{mmgroup}) %{lockdir}
 
 %changelog
+* Fri Dec 03 2021 Yoshihiro OKUMURA <orrisroot@gmail.com> - 3:2.1.38+j1-1
+- update to 2.1.38+j1
+
 * Tue Nov 09 2021 Yoshihiro OKUMURA <orrisroot@gmail.com> - 3:2.1.35+j1-1
 - update to 2.1.35+j1
 

@@ -13,10 +13,10 @@ $ sudo dnf install mailman
 
 ## Providing Packages
 * mailman : [![Copr build status](https://copr.fedorainfracloud.org/coprs/orrisroot/mailman-jp/package/mailman/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/orrisroot/mailman-jp/package/mailman/)
-  * mailman-2.1.35+j1-1.el8.ors.src.rpm
-  * mailman-2.1.35+j1-1.el8.ors.x86_64.rpm
-  * mailman-debuginfo-2.1.35+j1-1.el8.ors.x86_64.rpm
-  * mailman-debugsource-2.1.35+j1-1.el8.ors.x86_64.rpm
+  * mailman-2.1.38+j1-1.el8.ors.src.rpm
+  * mailman-2.1.38+j1-1.el8.ors.x86_64.rpm
+  * mailman-debuginfo-2.1.38+j1-1.el8.ors.x86_64.rpm
+  * mailman-debugsource-2.1.38+j1-1.el8.ors.x86_64.rpm
 * python-cchardet : [![Copr build status](https://copr.fedorainfracloud.org/coprs/orrisroot/mailman-jp/package/python-cchardet/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/orrisroot/mailman-jp/package/python-cchardet/)
   * python-cchardet-2.1.7-4.1.el8.ors.src.rpm
   * python-cchardet-debugsource-2.1.7-4.1.el8.ors.x86_64.rpm
